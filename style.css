@@ -1,0 +1,256 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+body {
+    width: 100vh;
+    height: 100vh;
+    background-color: rgb(68, 157, 173);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    
+}
+
+h1 {
+    color: white;
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.display-container {
+    width: 100%;
+    position: relative;
+    background-color: rgb(24, 43, 59);
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid rgb(185, 219, 249);
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+
+}
+
+.display {
+    width: 90%;
+    background-color: transparent;
+    padding: 1.15rem 1rem;
+    color: rgb(246, 248, 249);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 1.5rem;
+    border: none;
+}
+
+
+
+.display::placeholder{
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: rgb(228, 223, 59);
+    opacity: 0.65;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+}
+
+.display-container button {
+    position: absolute;     /*for overlap */
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.input-container {
+    width: auto;
+    background-color: rgb(24, 43, 59);
+    border-radius: 1rem;
+    padding: 2rem;
+    border-bottom: 0.35rem solid rgb(185, 219, 249);
+}
+
+.length-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container p:nth-child(1){
+    color:  rgb(246, 248, 249);
+    font-size: 1.5rem;
+}
+
+.length-container p:nth-child(2){
+    color: rgb(228, 223, 59);
+    font-size: 1.5rem;
+}
+
+.strength-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p{
+    color:  rgb(246, 248, 249);
+    font-size: 1.5rem;
+}
+
+.indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.generate-password {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: rgb(95, 1, 202);
+    text-align: center;
+    border-radius: 0.75rem;
+    border: 0.05rem solid rgb(228, 223, 59);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(228, 223, 59);
+    font-weight: 600;
+    font-size: 1.35rem;
+}
+
+.generate-password:ac{
+    background-color: rgb(69, 2, 146);
+}
+
+.check {
+    color: rgb(246, 248, 249);
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    gap: 0 1rem;
+}
+
+.check input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px  solid rgb(0, 238, 255);
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+}
+
+.check input:checked{
+    background-color: rgb(0, 238, 255);
+
+}
+ 
+.check input:checked::before{
+    content: "✔";
+    position: absolute;
+    color: rgb(24, 43, 59);
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    top: -11px;
+    transform: translateX(-50%) translateY(40%);
+}
+
+.check label {
+    color: aliceblue;
+}
+
+.copyBtn {
+    background: transparent;
+    border: none;
+}
+
+.tooltip{
+    background-color: aqua;
+    background-color: yellowgreen;
+    color:rgb(228, 223, 59) ;
+    font-size: 1.25em;
+    top:  -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.tooltip.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-color: rgb(24, 43, 59);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(violet,violet);
+    background-repeat: no-repeat;
+    border: none;
+    /* outline: none; */
+}
+
+
+/* ::-moz-range-thumb  is use for FireFox */
+/* ::-webkit-slider-thumb is use for chrome */
+.slider::-webkit-slider-thumb {
+    position: relative;
+    background-color:rgb(228, 223, 59) ;
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgb(228, 223, 59);
+    transition: all 100ms ease-in;
+}
+
+.slider:focus{
+    outline: 3px solid rgb(228, 223, 59);
+}
+
+.slider::-webkit-slider-thumb:hover{
+    outline: 2px solid rgb(228, 223, 59);
+    background-color: rgb(24, 43, 59);
+    box-shadow: 0px 0px 25px 5px rgb(228, 223, 59);
+}
+
+
+
+
+
+
+
+
+
+
